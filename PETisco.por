@@ -13,10 +13,20 @@ programa {
     "Tapete gramado para cães", "Cama para cachorros e gatos", 
     "Obstáculo para gatos", "Coleira de couro para cães"}
     real valores[10] = {45.99, 15.50, 8.99, 12.75, 19.9, 85.9, 33.9, 44.5, 119.9, 15.4}
+    real valor_total = 0
     
     inteiro opcao
     
-    inteiro prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10
+    inteiro prod1 = 0
+    inteiro prod2 = 0
+    inteiro prod3 = 0
+    inteiro prod4 = 0
+    inteiro prod5 = 0
+    inteiro prod6 = 0
+    inteiro prod7 = 0
+    inteiro prod8 = 0
+    inteiro prod9 = 0
+    inteiro prod10 = 0
 
     enquanto(opcao != 0) {
       escreva("\n--------------------------------------------------------")
@@ -34,36 +44,44 @@ programa {
     
         // Adição de opções
         se(opcao == 1) {
-          escreva("\n+1 Ração Premium para Cães")
           prod1++
-          escreva(prod1)
+          escreva("\nRação Premium para Cães: ", prod1)
         }
         se(opcao == 2) {
-          escreva("\n+1 Coleira de Couro para Gatos")
+          prod2++
+          escreva("\nColeira de Couro para Gatos: ", prod2)
         }
         se(opcao == 3) {
-          escreva("\n+1 Brinquedo de Pelúcia para Cachorros")
+          prod3++
+          escreva("\nBrinquedo de Pelúcia para Cachorros: ", prod3)
         }
         se(opcao == 4) {
-          escreva("\n+1 Shampoo para Cães com Aloe Vera")
+          prod4++
+          escreva("\nShampoo para Cães com Aloe Vera: ", prod4)
         }
         se(opcao == 5) {
-          escreva("\n+1 Caixa de Areia Higiênica para Gatos")
+          prod5++
+          escreva("\nCaixa de Areia Higiênica para Gatos: ", prod5)
         }
         se(opcao == 6) {
-          escreva("\n+1 Máquina de tosa")
+          prod6++
+          escreva("\nMáquina de tosa: ", prod6)
         }
         se(opcao == 7) {
-          escreva("\n+1 Tapete gramado para cães")
+          prod7++
+          escreva("\nTapete gramado para cães: ", prod7)
         }
         se(opcao == 8) {
-          escreva("\n+1 Cama para cachorros e gatos")
+          prod8++
+          escreva("\nCama para cachorros e gatos: ", prod8)
         }
         se(opcao == 9) {
-          escreva("\n+1 Obstáculo para gatos")
+          prod9++
+          escreva("\nObstáculo para gatos: ", prod9)
         }
         se(opcao == 10) {
-          escreva("\n+1 Coleira de couro para cães")
+          prod10++
+          escreva("\nColeira de couro para cães: ", prod10)
         }
 
         // Tratando erro da opção
@@ -73,17 +91,16 @@ programa {
           
         Temporizador(3000)
       }
-      escreva("Horário: ", C.hora_atual(), ":", C.minuto_atual())
+      valor_total = (valores[0] * prod1) + (valores[1] * prod2) + (valores[2] * prod3) + (valores[3] * prod4) +
+      (valores[4] * prod5) + (valores[5] * prod6) + (valores[6] * prod7) + (valores[7] * prod8) + 
+      (valores[8] * prod9) + (valores[9] * prod10)
+      escreva(valor_total)
     }
 
     // Funções mais pontuais
 
     funcao Temporizador(inteiro tempo) {
       U.aguarde(tempo)
-    }
-
-    funcao ValorDaCompra() {
-
     }
 
     funcao Credencial() {
