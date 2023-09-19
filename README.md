@@ -16,6 +16,13 @@
     [ 9 ] - Obstáculo para gatosColeira de couro para cães
     [ 10 ] - Coleira de couro para cães
 
+    Funcionalidades:
+    - o
+    - o
+    - o
+    - o
+    - o
+
 ## Imagem
 <img src="">
 
