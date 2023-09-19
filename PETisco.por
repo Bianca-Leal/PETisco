@@ -1,52 +1,108 @@
 programa {
+  // Bibliotecas utilizadas
+  inclua biblioteca Util --> U
+  inclua biblioteca Calendario --> C
+
   funcao inicio() {
     escreva("-------------------------------------------------------- \n- PETisco - \n--------------------------------------------------------")
-    escreva("\nBem-vindo ao nosso petShop, aqui voc� poder� encotrar os \nmelhores produtos para seu animalzinho. \n--------------------------------------------------------")
+    escreva("\nBem-vindo ao nosso petShop, aqui você poderá encotrar os \nmelhores produtos para seu animalzinho.")
 
     cadeia produtos[10] = 
-    {"Ra��o Premium para C�es", "Coleira de Couro para Gatos", "Brinquedo de Pel�cia para Cachorros", 
-    "Shampoo para C�es com Aloe Vera", "Caixa de Areia Higi�nica para Gatos", "", 
-    "", "", "", ""}
-    real valores[5] = {45.99, 15.50, 8.99, 12.75, 19.9}
+    {"Ração Premium para Cães", "Coleira de Couro para Gatos", "Brinquedo de Pelúcia para Cachorros", 
+    "Shampoo para Cães com Aloe Vera", "Caixa de Areia Higiênica para Gatos", "Máquina de tosa", 
+    "Tapete gramado para cães", "Cama para cachorros e gatos", 
+    "Obstáculo para gatos", "Coleira de couro para cães"}
+    real valores[10] = {45.99, 15.50, 8.99, 12.75, 19.9, 85.9, 33.9, 44.5, 119.9, 15.4}
+    
+    inteiro opcao
+    
+    inteiro prod1, prod2, prod3, prod4, prod5, prod6, prod7, prod8, prod9, prod10
 
-    para(inteiro produto = 0; produto < 5; produto++) {
-      escreva("\n[ ", produto, " ] ", produtos[produto], " --> R$", valores[produto])
-    }
+    enquanto(opcao != 0) {
+      escreva("\n--------------------------------------------------------")
+      para(inteiro produto = 0; produto < 10; produto++) {
+        escreva("\n[ ", produto+1, " ] ", produtos[produto], " --> R$", valores[produto])
+        Temporizador(1000)
+        }
+        escreva("\n-------------------------------------------------------- \n[ 0 ] Sair")
+        Temporizador(1000)
 
-    inteiro produto_selecionado
-    inteiro produto_1, produto_2, produto_3, produto_4, produto_5
-
-    para(inteiro selects = 0; selects < 10; selects++) {
-      escreva("\n-------------------------------------------------------- \nQual produto deseja? ")
-      leia(produto_selecionado)
-
-      escolha(produto_selecionado) {
-        caso 1:
-          produto_1++
+        escreva("\n-------------------------------------------------------- \nOpção: ")
+        leia(opcao)
         
-        caso 2:
-          produto_2++
+        Temporizador(1000)
+    
+        // Adição de opções
+        se(opcao == 1) {
+          escreva("\n+1 Ração Premium para Cães")
+          prod1++
+          escreva(prod1)
+        }
+        se(opcao == 2) {
+          escreva("\n+1 Coleira de Couro para Gatos")
+        }
+        se(opcao == 3) {
+          escreva("\n+1 Brinquedo de Pelúcia para Cachorros")
+        }
+        se(opcao == 4) {
+          escreva("\n+1 Shampoo para Cães com Aloe Vera")
+        }
+        se(opcao == 5) {
+          escreva("\n+1 Caixa de Areia Higiênica para Gatos")
+        }
+        se(opcao == 6) {
+          escreva("\n+1 Máquina de tosa")
+        }
+        se(opcao == 7) {
+          escreva("\n+1 Tapete gramado para cães")
+        }
+        se(opcao == 8) {
+          escreva("\n+1 Cama para cachorros e gatos")
+        }
+        se(opcao == 9) {
+          escreva("\n+1 Obstáculo para gatos")
+        }
+        se(opcao == 10) {
+          escreva("\n+1 Coleira de couro para cães")
+        }
 
-        caso 3:
-          produto_3++
-
-        caso 4:
-          produto_4++
-
-        caso 5:
-          produto_5++
-
-        caso contrario:
-          escreva("Op��o inv�lida.")
+        // Tratando erro da opção
+        se(opcao < 0 ou opcao > 10) {
+          escreva("\nOpção inválida.")
+        }
+          
+        Temporizador(3000)
       }
-      
-      escreva(produto_1, produto_2, produto_3, produto_4, produto_5)
-      escreva()
-      escreva()
-      escreva()
-      escreva()
+      escreva("Horário: ", C.hora_atual(), ":", C.minuto_atual())
+    }
+
+    // Funções mais pontuais
+
+    funcao Temporizador(inteiro tempo) {
+      U.aguarde(tempo)
+    }
+
+    funcao ValorDaCompra() {
 
     }
 
+    funcao Credencial() {
+
+    }
+
+    funcao PETiscoInfos() {
+
+    }
+
+    funcao NotaFiscal() {
+      Temporizador(3000)
+      escreva("\nGerando...")
+      Temporizador(3000)
+
+      escreva("\n- PETisco -")
+      escreva("\nCNPJ: ")
+      escreva("Data: ")
+      escreva("Horário: ", C.hora_atual(), ":", C.minuto_atual())
+    }
   }
 }
